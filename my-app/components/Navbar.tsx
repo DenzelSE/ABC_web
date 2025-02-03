@@ -44,7 +44,12 @@ export default function Navbar() {
             >
               Resources
             </Link>
-            <Button className="ml-4 bg-primary text-primary-foreground hover:bg-primary/90">Join Us</Button>
+            <Link
+              href="/#resources"
+              className="text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium"
+            >
+              Blogs
+            </Link>
           </div>
         </div>
       </div>
