@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
+
 export default function Hero() {
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-blue-100 via-purple-50 to-orange-50">
@@ -12,6 +13,7 @@ export default function Hero() {
                 The Future of Web3 in Africa
               </p>
             </div>
+
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500">
               Building Africa's
               <span className="block">Blockchain Future</span>
@@ -28,21 +30,20 @@ export default function Hero() {
               </Button>
             </div>
           </div>
+
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-72 h-72 sm:w-96 sm:h-96">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-100 to-orange-100 rounded-full blur-3xl"></div>
-              {/* <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ABClogo_.jpg-CRVBjpM0v3zkufeXJWkRmcfTyXrk8S.jpeg"
+              <Image
+                src="/ABC_logo.jpg"
                 alt="Africa's Blockchain Club"
-                fill
-                className="object-contain relative z-10"
+                layout="fill"
+                className="relative z-10 rounded-[12px]"
                 priority
-              /> */}
+              />
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
