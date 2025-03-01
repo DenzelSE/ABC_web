@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Features from "@/components/Features";
 import Events from "@/components/Events";
 import Resources from "@/components/Resources";
+import Partner from "@/components/Partner";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Features />
       <About />
       <Events />
+      <Partner/>
       <Resources />
 
       <div className="fixed bottom-4 right-4 flex items-center space-x-2">
