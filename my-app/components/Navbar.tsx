@@ -50,7 +50,7 @@ const Navbar = () => {
               href="/#about"
               className={`${
                 scrolled ? "text-black" : "text-white"
-              } text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-blue-500`}
+              } text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-[#AFAFAF]`}
             >
               About
             </Link>
@@ -58,7 +58,7 @@ const Navbar = () => {
               href="/#events"
               className={`${
                 scrolled ? "text-black" : "text-white"
-              } text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-blue-500`}
+              } text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-[#AFAFAF]`}
             >
               Events
             </Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
               href="/#projects"
               className={`${
                 scrolled ? "text-black" : "text-white"}
-              text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-blue-500`}
+              text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-[#AFAFAF]`}
             >
               Projects
             </Link>
@@ -74,7 +74,7 @@ const Navbar = () => {
               href="/#resources"
               className={`${
                 scrolled ? "text-black" : "text-white"
-              } text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-blue-500`}
+              } text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-[#AFAFAF]`}
             >
               Resources
             </Link>
@@ -82,7 +82,7 @@ const Navbar = () => {
               href="/#blogs"
               className={`${
                 scrolled ? "text-black" : "text-white"}
-              text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-blue-500`}
+              text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-[#AFAFAF]`}
             >
               Blogs
             </Link>

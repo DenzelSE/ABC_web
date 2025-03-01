@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80">
-        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl text-center mb-8">Our Activities</h2>
+      <div className="bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80 ">
+        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl text-center mb-12">Our Activities</h2>
         <ImageCarousel />
       </div>
       <Features />
