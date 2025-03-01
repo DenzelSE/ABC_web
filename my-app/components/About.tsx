@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div id="about" className="py-24 bg-gradient-to-b from-blue-50 to-purple-50">
+    <div id="about" className="py-24 bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">About Africa's Blockchain Club</h2>

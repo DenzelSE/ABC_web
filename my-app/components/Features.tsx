@@ -21,10 +21,10 @@ const features = [
 
 export default function Features() {
   return (
-    <div className="py-24 bg-gradient-to-b from-orange-50 to-purple-50">
+    <div className="py-24 bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold sm:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-400">
+          <h2 className="text-3xl font-extrabold sm:text-4xl bg-clip-text text-transparent bg-[#8B4513]">
             Why Join ABC?
           </h2>
         </div>
@@ -33,7 +33,7 @@ export default function Features() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="bg-white/70 backdrop-blur-sm border border-blue-100 hover:border-blue-200 transition-colors"
+                className="bg-[#AFAFAF] backdrop-blur-sm border border-blue-100 hover:border-blue-200 transition-colors"
               >
                 <CardHeader>
                   <feature.icon className="h-8 w-8 text-blue-500" />
