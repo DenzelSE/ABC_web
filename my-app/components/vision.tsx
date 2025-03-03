@@ -5,7 +5,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-
 export default function FullscreenCarousel() {
   const [emblaRef, embla] = useEmblaCarousel({ loop: true });
   const [isFullscreen, setIsFullscreen] = React.useState(false);
@@ -71,48 +70,73 @@ export default function FullscreenCarousel() {
           >
             {/* Slide 1 with different background and text */}
             <div className="min-w-full h-full bg-[#D1D1D1] flex flex-col items-center justify-center text-white snap-start pt-20">
-            {/* Heading */}
-            <dt className="text-7xl font-Plush text-gray-900 text-center" style={{ position: 'absolute', top: '7cm', left: '40%', transform: 'translateX(-50%)' }}>
+              {/* Heading */}
+              <dt className="text-7xl font-Plush text-gray-900 text-center">
                 Our
-            </dt>
-            <dt className="text-7xl font-Plush text-gray-900 text-center" style={{ position: 'absolute', top: '7cm', left: '65%', transform: 'translateX(-50%)' }}>
+              </dt>
+              <dt className="text-7xl font-Plush text-gray-900 text-center mt-4">
                 Mission
-            </dt>            
-            {/* Paragraph below the heading */}
-            <dd className="mt-6 text-2xl font-Plush text-gray-700 text-center max-w-xl">
-              To empower developers with the knowledge and tools needed to build the decentralized future of Africa.
-            </dd>
-          </div>
-          <div className="fixed left-1/2 transform -translate-x-1/2" style={{ top: '3cm' }}>
-            <div className="w-64 h-64">
-              <Image
-                src="/background/bg1.png" 
-                alt="ABC Spirit Animal"
-                width={300}
-                height={300}
-              />
+              </dt>            
+              {/* Paragraph below the heading */}
+              <dd className="mt-6 text-2xl font-Plush text-gray-700 text-center max-w-xl px-4">
+                To empower developers with the knowledge and tools needed to build the decentralized future of Africa.
+              </dd>
             </div>
-          </div>
-          
+
+            {/* Image */}
+            <div className="fixed left-1/2 transform -translate-x-1/2" style={{ top: '3cm' }}>
+              <div className="w-64 h-64">
+                <Image
+                  src="/background/bg1.png" 
+                  alt="ABC Spirit Animal"
+                  width={300}
+                  height={300}
+                />
+              </div>
+            </div>
+
             {/* Slide 2 with different background and text */}
-            <div
-              className="min-w-full h-full bg-green-500 flex items-center justify-center text-white text-4xl snap-start"
-            >
-              Slide 2 - Background Green
+            <div className="min-w-full h-full bg-[#D1D1D1] flex flex-col items-center justify-center text-white snap-start pt-20">
+              {/* Heading */}
+              <dt className="text-7xl font-Plush text-gray-900 text-center">
+                Our
+              </dt>
+              <dt className="text-7xl font-Plush text-gray-900 text-center mt-4">
+                Vision
+              </dt>            
+              {/* Paragraph below the heading */}
+              <dd className="mt-6 text-2xl font-Plush text-gray-700 text-center max-w-xl px-4">
+                A world where blockchain technology is accessible to all and drives positive change in African societies.
+              </dd>
             </div>
-            {/* Slide 3 with random text */}
+
+            {/* Image */}
+            <div className="fixed left-1/2 transform -translate-x-1/2" style={{ top: '3cm' }}>
+              <div className="w-64 h-64">
+                <Image
+                  src="/background/bg1.png" 
+                  alt="ABC Spirit Animal"
+                  width={300}
+                  height={300}
+                />
+              </div>
+            </div>
+
+            {/* Slide 3 - Example content */}
             <div
               className="min-w-full h-full bg-red-500 flex items-center justify-center text-white text-4xl snap-start"
             >
               Slide 3 - Background Red
             </div>
-            {/* Slide 4 with random text */}
+
+            {/* Slide 4 - Example content */}
             <div
               className="min-w-full h-full bg-yellow-500 flex items-center justify-center text-white text-4xl snap-start"
             >
               Slide 4 - Background Yellow
             </div>
-            {/* Slide 5 with random text */}
+
+            {/* Slide 5 - Example content */}
             <div
               className="min-w-full h-full bg-purple-500 flex items-center justify-center text-white text-4xl snap-start"
             >
