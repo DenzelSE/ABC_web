@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-
+ 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
 type CarouselOptions = UseCarouselParameters[0]
@@ -91,9 +91,27 @@ const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     }, [api, setApi])
 
     React.useEffect(() => {
+      if (!api) return;
+    
+      const autoScroll = setInterval(() => {
+        if (api.canScrollNext()) {
+          api.scrollNext({ duration: 2000, easing: (t) => 1 - Math.pow(1 - t, 3) }); 
+        } else {
+          api.scrollTo(0, { duration: 2000, easing: (t) => 1 - Math.pow(1 - t, 3) }); 
+        }
+      }, 4000); 
+    
+      return () => clearInterval(autoScroll); // Cleanup on unmount
+    }, [api]);
+    
+    
+
+    React.useEffect(() => {
       if (!api) {
         return
       }
+
+      
 
       onSelect(api)
       api.on("reInit", onSelect)
