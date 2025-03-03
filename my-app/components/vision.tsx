@@ -1,157 +1,44 @@
 "use client";
 
-import * as React from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function FullscreenCarousel() {
-  const [emblaRef, embla] = useEmblaCarousel({ loop: true });
-  const [isFullscreen, setIsFullscreen] = React.useState(false);
-  const [hasScrolled, setHasScrolled] = React.useState(false);
+const slides = [
+  { id: 1, title: "Slide 1", content: "Welcome to the future of Web3 in Africa.", bg: "bg-blue-600" },
+  { id: 2, title: "Slide 2", content: "Explore decentralized innovations.", bg: "bg-purple-600" },
+  { id: 3, title: "Slide 3", content: "Join the movement towards blockchain adoption.", bg: "bg-orange-600" },
+];
 
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !isFullscreen) {
-          setIsFullscreen(true); // Activate fullscreen when the trigger element is visible
-        } else if (!entry.isIntersecting && isFullscreen) {
-          setIsFullscreen(false); // Deactivate fullscreen when it's no longer in view
-        }
-      },
-      { threshold: 0.5 } // Trigger when 50% of the trigger element is visible
-    );
+export default function FullScreenVerticalCarousel() {
+  const [activeSlide, setActiveSlide] = useState(0);
 
-    const target = document.getElementById("carousel-trigger");
-    if (target) observer.observe(target);
+  const nextSlide = () => {
+    setActiveSlide((prev) => (prev + 1) % slides.length);
+  };
 
-    return () => observer.disconnect();
-  }, [isFullscreen]);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        // Exit fullscreen after scrolling past a certain threshold
-        setHasScrolled(true);
-      } else {
-        setHasScrolled(false);
-      }
-    };
-
-    // Listen for scroll events
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const prevSlide = () => {
+    setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
   return (
-    <div>
-      {/* Normal content before carousel */}
-      <div className="h-screen bg-gray-200 flex items-center justify-center">
-        <h1 className="text-4xl">Scroll Down to Enter Fullscreen Carousel</h1>
-      </div>
-
-      {/* Larger trigger section for better detection */}
-      <div id="carousel-trigger" className="h-[100px] bg-transparent"></div>
-
-      {/* Fullscreen Carousel */}
-      <div
-        ref={emblaRef}
-        className={cn(
-          "fixed top-0 left-0 w-screen h-screen transition-all duration-700 ease-in-out z-50", // Ensure full-screen carousel on top
-          isFullscreen ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
-        )}
-      >
-        <div className="overflow-hidden w-full h-full">
-          {/* Horizontal scroll container */}
-          <div
-            className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
-            style={{ scrollSnapType: "x mandatory" }}
-          >
-            {/* Slide 1 with different background and text */}
-            <div className="min-w-full h-full bg-[#D1D1D1] flex flex-col items-center justify-center text-white snap-start pt-20">
-              {/* Heading */}
-              <dt className="text-7xl font-Plush text-gray-900 text-center">
-                Our
-              </dt>
-              <dt className="text-7xl font-Plush text-gray-900 text-center mt-4">
-                Mission
-              </dt>            
-              {/* Paragraph below the heading */}
-              <dd className="mt-6 text-2xl font-Plush text-gray-700 text-center max-w-xl px-4">
-                To empower developers with the knowledge and tools needed to build the decentralized future of Africa.
-              </dd>
-            </div>
-
-            {/* Image */}
-            <div className="fixed left-1/2 transform -translate-x-1/2" style={{ top: '3cm' }}>
-              <div className="w-64 h-64">
-                <Image
-                  src="/background/bg1.png" 
-                  alt="ABC Spirit Animal"
-                  width={300}
-                  height={300}
-                />
-              </div>
-            </div>
-
-            {/* Slide 2 with different background and text */}
-            <div className="min-w-full h-full bg-[#D1D1D1] flex flex-col items-center justify-center text-white snap-start pt-20">
-              {/* Heading */}
-              <dt className="text-7xl font-Plush text-gray-900 text-center">
-                Our
-              </dt>
-              <dt className="text-7xl font-Plush text-gray-900 text-center mt-4">
-                Vision
-              </dt>            
-              {/* Paragraph below the heading */}
-              <dd className="mt-6 text-2xl font-Plush text-gray-700 text-center max-w-xl px-4">
-                A world where blockchain technology is accessible to all and drives positive change in African societies.
-              </dd>
-            </div>
-
-            {/* Image */}
-            <div className="fixed left-1/2 transform -translate-x-1/2" style={{ top: '3cm' }}>
-              <div className="w-64 h-64">
-                <Image
-                  src="/background/bg1.png" 
-                  alt="ABC Spirit Animal"
-                  width={300}
-                  height={300}
-                />
-              </div>
-            </div>
-
-            {/* Slide 3 - Example content */}
-            <div
-              className="min-w-full h-full bg-red-500 flex items-center justify-center text-white text-4xl snap-start"
-            >
-              Slide 3 - Background Red
-            </div>
-
-            {/* Slide 4 - Example content */}
-            <div
-              className="min-w-full h-full bg-yellow-500 flex items-center justify-center text-white text-4xl snap-start"
-            >
-              Slide 4 - Background Yellow
-            </div>
-
-            {/* Slide 5 - Example content */}
-            <div
-              className="min-w-full h-full bg-purple-500 flex items-center justify-center text-white text-4xl snap-start"
-            >
-              Slide 5 - Background Purple
-            </div>
+    <div className="w-screen h-screen overflow-hidden flex flex-col items-center justify-center">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={slides[activeSlide].id}
+          className={`absolute inset-0 flex flex-col justify-center items-center text-white text-center ${slides[activeSlide].bg}`}
+          initial={{ y: "100vh", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: "-100vh", opacity: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-5xl font-bold">{slides[activeSlide].title}</h2>
+          <p className="text-lg mt-4">{slides[activeSlide].content}</p>
+          <div className="mt-6 flex gap-4">
+            <button onClick={prevSlide} className="bg-white text-black px-4 py-2 rounded-md">Prev</button>
+            <button onClick={nextSlide} className="bg-white text-black px-4 py-2 rounded-md">Next</button>
           </div>
-        </div>
-      </div>
-
-      {/* Exiting fullscreen after scrolling */}
-      {hasScrolled && !isFullscreen && (
-        <div className="text-center p-4">
-          <h2 className="text-xl">You Scrolled Out of Fullscreen Mode!</h2>
-        </div>
-      )}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

@@ -6,12 +6,13 @@ import Features from "@/components/Features";
 import Events from "@/components/Events";
 import Resources from "@/components/Resources";
 import Partner from "@/components/Partner";
+import Vision from "@/components/vision";
 
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      {/* <Hero />
       <div className="bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80 ">
         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl text-center mb-12">Our Activities</h2>
         <ImageCarousel />
@@ -20,7 +21,8 @@ export default function Home() {
       <About />
       <Events />
       <Partner/>
-      <Resources />
+      <Resources /> */}
+      <Vision/>
 
       <div className="fixed bottom-4 right-4 flex items-center space-x-2">
         <div className="w-12 h-12">

@@ -33,7 +33,7 @@ export default function Hero() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-74 h-74 sm:w-96 sm:h-96">
+            <div className="relative w-72 h-72 sm:w-96 sm:h-96">
               <Image
                 src="/ABC.png"
                 alt="Africa's Blockchain Club"

@@ -79,7 +79,7 @@ const Navbar = () => {
               Resources
             </Link>
             <Link
-              href="/#blogs"
+              href="/vision"
               className={`${
                 scrolled ? "text-black" : "text-white"}
               text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-[#AFAFAF]`}
