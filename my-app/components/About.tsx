@@ -1,33 +1,77 @@
+"use client"; // Make sure it's a Client Component
+
+import * as React from "react";
+import Image from "next/image";
+
 export default function About() {
   return (
-    <div id="about" className="py-24 bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">About Africa's Blockchain Club</h2>
-          <p className="mt-4 max-w-2xl text-xl text-gray-600 lg:mx-auto">
-            We are a community-driven organization dedicated to advancing Web3 technology and fostering innovation in
-            the blockchain space across Africa.
-          </p>
+    <div className="min-h-screen bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80">
+      
+      {/* Text above the islands */}
+      <div className="flex flex-col items-center justify-center text-center py-12">
+        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          About Africa's Blockchain Club
+        </h2>
+        <p className="mt-4 max-w-2xl text-xl text-gray-600 lg:mx-auto">
+          We are a community-driven organization dedicated to advancing Web3 technology and fostering innovation in
+          the blockchain space across Africa.
+        </p>
+      </div>
+
+      {/* Islands Section */}
+      <div className="flex justify-center gap-8 px-8">
+        {/* Island 1 */}
+        <div className="min-w-[400px] max-w-[600px] h-full bg-[#D1D1D1] flex flex-col items-center justify-center text-white snap-start pt-16 pb-10 rounded-2xl overflow-hidden">
+          {/* Image on top */}
+          <div className="w-64 h-64 mb-6 rounded-full overflow-hidden">
+            <Image
+              src="/ABC.png"
+              alt="ABC Spirit Animal"
+              width={300}
+              height={300}
+            />
+          </div>
+          
+          {/* Heading */}
+          <dt className="text-5xl font-Plush text-gray-900 text-center">
+            Our
+          </dt>
+          <dt className="text-5xl font-Plush text-gray-900 text-center mt-4">
+            Mission
+          </dt>
+          
+          {/* Paragraph below the heading */}
+          <dd className="mt-6 text-xl font-Plush text-gray-700 text-center max-w-xl px-4">
+            To empower developers with the knowledge and tools needed to build the decentralized future of Africa.
+          </dd>
         </div>
-        <div className="mt-20">
-          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-            <div className="bg-white/70 p-6 rounded-lg shadow-md">
-              <dt className="text-lg leading-6 font-medium text-gray-900">Our Mission</dt>
-              <dd className="mt-2 text-base text-gray-600">
-                To empower developers with the knowledge and tools needed to build the decentralized future of Africa.
-              </dd>
-            </div>
-            <div className="bg-white/70 p-6 rounded-lg shadow-md">
-              <dt className="text-lg leading-6 font-medium text-gray-900">Our Vision</dt>
-              <dd className="mt-2 text-base text-gray-600">
-                A world where blockchain technology is accessible to all and drives positive change in African
-                societies.
-              </dd>
-            </div>
-          </dl>
+
+        {/* Island 2 */}
+        <div className="min-w-[400px] max-w-[600px] h-full bg-[#D1D1D1] flex flex-col items-center justify-center text-white snap-start pt-16 pb-10 rounded-2xl overflow-hidden">
+          {/* Image on top */}
+          <div className="w-64 h-64 mb-6 rounded-full overflow-hidden">
+            <Image
+              src="/background/bg1.png"
+              alt="ABC Spirit Animal"
+              width={300}
+              height={300}
+            />
+          </div>
+          
+          {/* Heading */}
+          <dt className="text-5xl font-Plush text-gray-900 text-center">
+            Our
+          </dt>
+          <dt className="text-5xl font-Plush text-gray-900 text-center mt-4">
+            Vision
+          </dt>
+          
+          {/* Paragraph below the heading */}
+          <dd className="mt-6 text-xl font-Plush text-gray-700 text-center max-w-xl px-4">
+            A world where blockchain technology is accessible to all and drives positive change in African societies.
+          </dd>
         </div>
       </div>
     </div>
-  )
+  );
 }
-

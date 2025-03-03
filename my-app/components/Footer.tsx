@@ -33,13 +33,13 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://github.com/Africas-Blockchain-Club" className="text-gray-400 hover:text-white">
                 <Github />
               </a>
               <a href="#" className="text-gray-400 hover:text-white">
                 <Twitter />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.linkedin.com/company/africa-s-blockchain-club/" className="text-gray-400 hover:text-white">
                 <Linkedin />
               </a>
             </div>
