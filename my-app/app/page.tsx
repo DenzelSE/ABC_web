@@ -6,6 +6,8 @@ import Features from "@/components/Features";
 import Events from "@/components/Events";
 import Resources from "@/components/Resources";
 import Partner from "@/components/Partner";
+import Vision from "@/components/vision";
+
 
 export default function Home() {
   return (
@@ -16,6 +18,7 @@ export default function Home() {
         <ImageCarousel />
       </div>
       <Features />
+      <Vision />
       <About />
       <Events />
       <Partner/>
