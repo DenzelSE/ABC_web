@@ -16,7 +16,7 @@ const slides = [
     id: 2,
     title: "Research Paper",
     content: "Unlocking Value in Web3 Gaming: What is GameFi? And why is it a game you might want to play.",
-    image: "/whatsTheMove/g.png",  // Make sure this image has transparency (alpha channel)
+    image: "/whatsTheMove/game.png", 
     btn1: { text: "Discover", link: "https://medium.com/@africablockchainclub/unlocking-value-in-web3-gaming-e92401d553ff" },
   },
   {
@@ -72,15 +72,13 @@ export default function FullScreenVerticalCarousel() {
           exit={{ y: "-100vh", opacity: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Only apply overlay to transparent PNG slide */}
+          {/* Image without overlay */}
           <div
             className="relative w-full h-full"
             style={{
-              backgroundColor: activeSlide === 1 ? "rgba(44, 62, 80, 0.7)" : "transparent",  // Apply color overlay for transparent PNG slide
               backgroundImage: `url(${slides[activeSlide].image})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              mixBlendMode: activeSlide === 1 ? "multiply" : "normal",  // Only apply mixBlendMode to the transparent PNG
             }}
           >
             {/* Title and content */}
