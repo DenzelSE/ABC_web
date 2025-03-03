@@ -10,7 +10,7 @@ const slides = [
     title: "Research Paper",
     content: "CEX or DEX? The FTX collapse disruption!: Story behind one of the biggest scams in history.",
     image: "/whatsTheMove/sam6.png",
-    btn1: { text: "Learn More", link: "https://medium.com/@africablockchainclub/cex-or-dex-the-ftx-collapse-disruption-f20a863f416a" },
+    btn1: { text: "Discover", link: "https://medium.com/@africablockchainclub/cex-or-dex-the-ftx-collapse-disruption-f20a863f416a" },
   },
   {
     id: 2,
@@ -42,9 +42,9 @@ export default function FullScreenVerticalCarousel() {
 
   const handleWheel = (event) => {
     if (event.deltaY > 0) {
-      nextSlide(); // Scroll down
+      nextSlide();
     } else {
-      prevSlide(); // Scroll up
+      prevSlide();
     }
   };
 
