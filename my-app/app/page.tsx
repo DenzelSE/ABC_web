@@ -6,7 +6,7 @@ import Features from "@/components/Features";
 import Events from "@/components/Events";
 import Resources from "@/components/Resources";
 import Partner from "@/components/Partner";
-import Vision from "@/components/vision";
+import Mission from "@/components/mission";
 
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
         <ImageCarousel />
       </div>
       <Features />
-      <Vision />
+      <Mission />
       <About />
       <Events />
       <Partner/>
