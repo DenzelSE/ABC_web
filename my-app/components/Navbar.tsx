@@ -10,11 +10,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -45,46 +41,60 @@ const Navbar = () => {
           </div>
 
           {/* Right Side: Navigation Links */}
-          <div className="flex items-center gap-1 sm:gap-4">
-            <Link
-              href="/#about"
-              className={`${
-                scrolled ? "text-black" : "text-white"
-              } text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-[#AFAFAF]`}
-            >
-              About
+          <div className="flex items-center gap-2">
+            <Link href="/#about">
+              <Button
+                variant="ghost"
+                className={`${
+                  scrolled ? "text-black" : "text-white"
+                } hover:bg-[#AFAFAF]`}
+              >
+                About
+              </Button>
             </Link>
-            <Link
-              href="/#events"
-              className={`${
-                scrolled ? "text-black" : "text-white"
-              } text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-[#AFAFAF]`}
-            >
-              Events
+
+            <Link href="/#events">
+              <Button
+                variant="ghost"
+                className={`${
+                  scrolled ? "text-black" : "text-white"
+                } hover:bg-[#AFAFAF]`}
+              >
+                Events
+              </Button>
             </Link>
-            <Link
-              href="/#projects"
-              className={`${
-                scrolled ? "text-black" : "text-white"}
-              text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-[#AFAFAF]`}
-            >
-              Projects
+
+            <Link href="/#projects">
+              <Button
+                variant="ghost"
+                className={`${
+                  scrolled ? "text-black" : "text-white"
+                } hover:bg-[#AFAFAF]`}
+              >
+                Projects
+              </Button>
             </Link>
-            <Link
-              href="/#resources"
-              className={`${
-                scrolled ? "text-black" : "text-white"
-              } text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-[#AFAFAF]`}
-            >
-              Resources
+
+            <Link href="/#resources">
+              <Button
+                variant="ghost"
+                className={`${
+                  scrolled ? "text-black" : "text-white"
+                } hover:bg-[#AFAFAF]`}
+              >
+                Resources
+              </Button>
             </Link>
-            <Link
-              href="/vision"
-              className={`${
-                scrolled ? "text-black" : "text-white"}
-              text-foreground/80 hover:text-foreground px-2 py-2 rounded-md text-sm font-medium hover:bg-[#AFAFAF]`}
-            >
-              Blogs
+
+            <Link href="/vision">
+              <Button
+                variant="ghost"
+                className={`${
+                  scrolled ? "text-black" : "text-white"
+                } hover:bg-[#AFAFAF]`}
+              >
+                Blogs
+              </Button>
             </Link>
           </div>
         </div>
