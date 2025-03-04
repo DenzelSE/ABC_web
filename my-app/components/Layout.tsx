@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname(); // Get the current route
-  const hideLayoutOn = ["/vision"]; // Pages where Navbar & Footer are hidden
+  const hideLayoutOn = ["/vision", "/developers", "/partners", "/researchers"]; // Pages where Navbar & Footer are hidden
 
   return (
     <div className="flex flex-col min-h-screen">

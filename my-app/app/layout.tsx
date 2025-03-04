@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Layout>{children}</Layout> {/* Use separate Client Component */}
+        <Layout>{children}</Layout> 
       </body>
     </html>
   );
