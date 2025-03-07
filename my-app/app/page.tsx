@@ -19,9 +19,8 @@ export default function Home() {
       <Features />
       <About />
       <Events />
-      <Partner/>
       <Resources />
-
+      <Partner/>
       <div className="fixed bottom-4 right-4 flex items-center space-x-2">
         <div className="w-12 h-12">
           <Image
