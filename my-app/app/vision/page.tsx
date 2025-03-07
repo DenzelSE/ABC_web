@@ -21,10 +21,10 @@ const slides = [
   },
   {
     id: 3,
-    title: "Shape the Future",
-    content: "Be a part of Africa's digital transformation.",
+    title: "OffConnectX (OCX)",
+    content: "Empowering Every Corner with Seamless, Secure, and Offline-Ready Smart Contracts – Fast Transactions, No Bank, No Internet Required.",
     image: "/images/slide3.jpg",
-    btn1: { text: "Get Involved", link: "/involved" },
+    btn1: { text: "Get Involved", link: "https://www.linkedin.com/in/offconnectx-ocx-4a3328313/" },
   },
 ];
 
