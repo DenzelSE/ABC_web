@@ -16,7 +16,7 @@ const slides = [
     id: 2,
     title: "Research Paper",
     content: "Unlocking Value in Web3 Gaming: What is GameFi? And why is it a game you might want to play.",
-    image: "/whatsTheMove/game.png", 
+    image: "/whatsTheMove/gameMel.png", 
     btn1: { text: "Discover", link: "https://medium.com/@africablockchainclub/unlocking-value-in-web3-gaming-e92401d553ff" },
   },
   {
@@ -94,7 +94,7 @@ export default function FullScreenVerticalCarousel() {
               <div className="mt-6 flex gap-4 flex-col items-center sm:items-end">
                 <a
                   href={slides[activeSlide].btn1.link}
-                  className={`bg-white text-black px-4 py-2 rounded-md transition-all duration-300 ${clicked ? "animate-pulse" : ""}`}
+                  className={`bg-black text-white px-4 py-2 rounded-md transition-all duration-300 ${clicked ? "animate-pulse" : ""}`}
                   onClick={handleButtonClick}
                 >
                   {slides[activeSlide].btn1.text}
