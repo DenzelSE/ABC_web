@@ -61,7 +61,7 @@ export default function Carousel() {
       </div>
 
       {/* Form */}
-      <div className="bg-[#EFE6DC] p-10 rounded-2xl w-full w-[590px]  mx-4 text-black text-center shadow-lg shadow-gray-900">
+      <div className="bg-[#EFE6DC] p-10 rounded-2xl w-[600px]  mx-4 text-black text-center shadow-lg shadow-gray-900">
         <h1 className="text-3xl font-bold mb-6">{forms[activeForm].text}</h1>
         <form className="space-y-4">
           {forms[activeForm].fields.map((field) => (
