@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image"; // Import the Image component
+import { useRouter } from "next/navigation"; // Import Next.js router
 
 const carouselItems = [
-  { id: "item1", title: "Item 1", imageUrl: "/research/sam6.png", link: "/page1" },
-  { id: "item2", title: "Item 2", imageUrl: "/research/gameMel.png", link: "/page2" },
+  { id: "item1", title: "Item 1", imageUrl: "/research/sam6.png", link: "/vision" },
+  { id: "item2", title: "Item 2", imageUrl: "/research/gameMel.png", link: "/vision" },
   { id: "item3", title: "Item 3", imageUrl: "/projects/BioHealth.jpg", link: "/page3" },
-  { id: "item4", title: "Item 4", imageUrl: "/research/bybit.jpg", link: "/page4" },
+  { id: "item4", title: "Item 4", imageUrl: "/research/bybit.jpg", link: "/vision" },
   { id: "item5", title: "Item 5", imageUrl: "/research/placeholder.jpg", link: "/page5" },
   { id: "item6", title: "Item 6", imageUrl: "/research/placeholder.jpg", link: "/page6" },
 ];
@@ -14,24 +15,41 @@ const carouselItems = [
 const extendedItems = [...carouselItems, ...carouselItems];
 
 const ImageCarousel = () => {
+  const router = useRouter(); // Using Next.js router to navigate
+
+  const handleClick = (link) => {
+    router.push(link); // Navigate to the specified link
+  };
+
+  const handleMouseEnter = () => {
+    document.querySelector('.carousel').style.animationPlayState = 'paused';
+  };
+
+  const handleMouseLeave = () => {
+    document.querySelector('.carousel').style.animationPlayState = 'running';
+  };
+
   return (
     <div className="carousel-container">
-      <div className="carousel">
+      <div className="carousel" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {extendedItems.map((item, index) => (
           <div key={index} className="carousel-item">
-            <div className="image-container">
+            <div
+              className="image-container"
+              onClick={() => handleClick(item.link)} // Handle click event
+            >
               <Image 
                 src={item.imageUrl} 
                 alt={item.title} 
                 className="carousel-image" 
-                width={220}  // Specify width
-                height={220} // Specify height (same value for square shape)
+                width={220}  
+                height={220} 
               />
             </div>
           </div>
         ))}
       </div>
-      
+
       <style jsx>{`
         .carousel-container {
           width: 100%;
@@ -67,6 +85,7 @@ const ImageCarousel = () => {
           display: flex;
           justify-content: center;
           align-items: center;
+          cursor: pointer; /* Indicate that the image is clickable */
         }
 
         .carousel-image {
