@@ -1,20 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
 const carouselItems = [
-  { id: "item1", title: "Item 1", imageUrl: "/whatsTheMove/sam6.png", link: "/page1" },
-  { id: "item2", title: "Item 2", imageUrl: "/whatsTheMove/gameMel.png", link: "/page2" },
+  { id: "item1", title: "Item 1", imageUrl: "/research/sam6.png", link: "/page1" },
+  { id: "item2", title: "Item 2", imageUrl: "/research/gameMel.png", link: "/page2" },
   { id: "item3", title: "Item 3", imageUrl: "/projects/BioHealth.jpg", link: "/page3" },
-  { id: "item4", title: "Item 4", imageUrl: "/images/item4.jpg", link: "/page4" },
-  { id: "item5", title: "Item 5", imageUrl: "/images/item5.jpg", link: "/page5" },
-  { id: "item6", title: "Item 6", imageUrl: "/images/item6.jpg", link: "/page6" },
+  { id: "item4", title: "Item 4", imageUrl: "/research/bybit.jpg", link: "/page4" },
+  { id: "item5", title: "Item 5", imageUrl: "/research/placeholder.jpg", link: "/page5" },
+  { id: "item6", title: "Item 6", imageUrl: "/research/placeholder.jpg", link: "/page6" },
 ];
 
-// Duplicate items for seamless looping
 const extendedItems = [...carouselItems, ...carouselItems];
 
-const Home = () => {
+const ImageCarousel = () => {
   return (
     <div className="carousel-container">
       <div className="carousel">
@@ -34,7 +31,7 @@ const Home = () => {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 20px 0; /* Add some padding */
+          padding: 10px 0; /* Decreased top padding */
         }
 
         .carousel {
@@ -72,4 +69,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default ImageCarousel;
