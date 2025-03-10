@@ -10,7 +10,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 50); // Just checking if the page is scrolled
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -18,7 +18,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-background/80 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+    <nav
+      className="bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80 sticky top-0 z-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Left Side: Logo & Title */}
@@ -27,13 +29,11 @@ const Navbar = () => {
               <Image
                 src="/background/bg3.png"
                 alt="Logo"
-                width={45} 
+                width={45}
                 height={45}
               />
               <span
-                className={`text-xl font-bold ${
-                  scrolled ? "text-black" : "text-white"
-                } hidden sm:inline`}
+                className="text-xl font-bold text-black hidden sm:inline"
               >
                 Africa's Blockchain Club
               </span>
@@ -45,9 +45,7 @@ const Navbar = () => {
             <Link href="/#about">
               <Button
                 variant="ghost"
-                className={`${
-                  scrolled ? "text-black" : "text-white"
-                } hover:bg-[#AFAFAF]`}
+                className="text-black hover:bg-transparent"
               >
                 About
               </Button>
@@ -56,9 +54,7 @@ const Navbar = () => {
             <Link href="/#events">
               <Button
                 variant="ghost"
-                className={`${
-                  scrolled ? "text-black" : "text-white"
-                } hover:bg-[#AFAFAF]`}
+                className="text-black hover:bg-transparent"
               >
                 Events
               </Button>
@@ -67,9 +63,7 @@ const Navbar = () => {
             <Link href="/#projects">
               <Button
                 variant="ghost"
-                className={`${
-                  scrolled ? "text-black" : "text-white"
-                } hover:bg-[#AFAFAF]`}
+                className="text-black hover:bg-transparent"
               >
                 Projects
               </Button>
@@ -78,9 +72,7 @@ const Navbar = () => {
             <Link href="/#resources">
               <Button
                 variant="ghost"
-                className={`${
-                  scrolled ? "text-black" : "text-white"
-                } hover:bg-[#AFAFAF]`}
+                className="text-black hover:bg-transparent"
               >
                 Resources
               </Button>
@@ -89,9 +81,7 @@ const Navbar = () => {
             <Link href="/vision">
               <Button
                 variant="ghost"
-                className={`${
-                  scrolled ? "text-black" : "text-white"
-                } hover:bg-[#AFAFAF]`}
+                className="text-black hover:bg-transparent"
               >
                 Blogs
               </Button>

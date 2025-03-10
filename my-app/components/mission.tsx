@@ -1,4 +1,4 @@
-"use client"; // Make sure it's a Client Component
+"use client"; 
 
 import * as React from "react";
 import Image from "next/image";

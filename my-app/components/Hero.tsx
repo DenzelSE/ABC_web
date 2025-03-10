@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import ABCcarousel from "@/components/ABCwork"
 
 
 export default function Hero() {
   return (
-    // <div className="relative overflow-hidden bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] via-purple-50 to-orange-50">
-    <div className="relative overflow-hidden bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80 via-purple-50 to-orange-50">
-      <div className="relative max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div className="relative overflow-hidden bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80 via-purple-50 to-orange-50 min-h-screen">
+      <div className="relative max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
           <div className="text-center lg:text-left">
             <div className="inline-block">
               <p className="mb-4 inline-block bg-orange-100 text-orange-600 px-4 py-1.5 rounded-full text-sm font-semibold">
@@ -33,7 +33,7 @@ export default function Hero() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-72 h-72 sm:w-96 sm:h-96">
+            <div className="relative w-100 h-100 sm:w-96 sm:h-96">
               <Image
                 src="/ABC.png"
                 alt="Africa's Blockchain Club"
@@ -43,6 +43,7 @@ export default function Hero() {
               />
             </div>
           </div>
+          <ABCcarousel/>
         </div>
       </div>
     </div>
