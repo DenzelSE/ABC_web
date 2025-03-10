@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image"; // Import the Image component
+
 const carouselItems = [
   { id: "item1", title: "Item 1", imageUrl: "/research/sam6.png", link: "/page1" },
   { id: "item2", title: "Item 2", imageUrl: "/research/gameMel.png", link: "/page2" },
@@ -17,43 +19,60 @@ const ImageCarousel = () => {
       <div className="carousel">
         {extendedItems.map((item, index) => (
           <div key={index} className="carousel-item">
-            <img src={item.imageUrl} alt={item.title} className="carousel-image" />
+            <div className="image-container">
+              <Image 
+                src={item.imageUrl} 
+                alt={item.title} 
+                className="carousel-image" 
+                width={220}  // Specify width
+                height={220} // Specify height (same value for square shape)
+              />
+            </div>
           </div>
         ))}
       </div>
-
+      
       <style jsx>{`
         .carousel-container {
-          width: 100%; 
+          width: 100%;
           overflow: hidden;
           position: relative;
           background: transparent;
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 10px 0; /* Decreased top padding */
+          padding: 10px 0;
         }
 
         .carousel {
           display: flex;
           animation: scroll 6s linear infinite;
-          width: calc(250px * ${extendedItems.length}); /* Medium size */
+          width: calc(250px * ${extendedItems.length}); /* Width based on item count */
         }
 
         .carousel-item {
-          min-width: 250px; /* Balanced image size */
-          height: 180px; /* Adjust height */
-          margin: 0 15px; /* Adds spacing between images */
+          min-width: 250px;
+          height: 250px; /* Set consistent height for each image container */
+          margin: 0 15px; /* Space between images */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .image-container {
+          width: 250px; /* Ensure image container has consistent size */
+          height: 250px;
+          border-radius: 40%; /* Make the container rounded */
+          overflow: hidden; /* Hide any overflow */
           display: flex;
           justify-content: center;
           align-items: center;
         }
 
         .carousel-image {
+          object-fit: cover; /* Ensure images cover the container's area */
           width: 100%;
           height: 100%;
-          object-fit: cover;
-          border-radius: 12px;
         }
 
         @keyframes scroll {
