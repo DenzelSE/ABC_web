@@ -21,7 +21,7 @@ export default function About() {
       {/* Islands Section */}
       <div className="flex justify-center gap-8 px-8">
         {/* Island 1 */}
-        <div className="min-w-[400px] max-w-[600px] h-full bg-[#D1D1D1] flex flex-col items-center justify-center text-white snap-start pt-16 pb-10 rounded-2xl overflow-hidden">
+        <div className="min-w-[400px] max-w-[500px] h-full bg-[#D1D1D1] flex flex-col items-center justify-center text-white snap-start pt-16 pb-10 rounded-2xl overflow-hidden">
           {/* Image on top */}
           <div className="w-64 h-64 mb-6 rounded-full overflow-hidden">
             <Image
@@ -47,7 +47,7 @@ export default function About() {
         </div>
 
         {/* Island 2 */}
-        <div className="min-w-[400px] max-w-[600px] h-full bg-[#D1D1D1] flex flex-col items-center justify-center text-white snap-start pt-16 pb-10 rounded-2xl overflow-hidden">
+        <div className="min-w-[400px] max-w-[500px] h-full bg-[#D1D1D1] flex flex-col items-center justify-center text-white snap-start pt-16 pb-10 rounded-2xl overflow-hidden">
           {/* Image on top */}
           <div className="w-64 h-64 mb-6 rounded-full overflow-hidden">
             <Image

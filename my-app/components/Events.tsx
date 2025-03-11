@@ -24,7 +24,7 @@ export default function Events() {
   return (
     <div id="events" className="py-24 bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold sm:text-4xl text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-400">
+        <h2 className="text-3xl font-extrabold sm:text-4xl text-center mb-12 bg-clip-text text-black bg-gradient-to-r from-blue-500 to-purple-400 text-black">
           Upcoming Events
         </h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">

@@ -24,7 +24,7 @@ export default function Features() {
     <div className="py-24 bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold sm:text-4xl bg-clip-text text-transparent bg-[#8B4513]">
+          <h2 className="text-3xl font-extrabold sm:text-4xl bg-clip-text bg-[#8B4513] text-black">
             Why Join ABC?
           </h2>
         </div>

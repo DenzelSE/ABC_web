@@ -45,7 +45,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Move carousel up using negative margin */}
       <div className="mt-[-20px]">
         <ABCcarousel />
       </div>

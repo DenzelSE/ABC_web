@@ -27,7 +27,7 @@ export default function Resources() {
   return (
     <div id="resources" className="py-24 bg-gradient-to-r from-[#D8CFC4] to-[#AFAFAF] opacity-80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl text-center mb-12">Educational Resources</h2>
+        <h2 className="text-3xl font-extrabold text-black sm:text-4xl text-center mb-12">Educational Resources</h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {resources.map((resource, index) => (
             <Card

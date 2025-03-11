@@ -43,6 +43,7 @@ export function ImageCarousel() {
         {images.map((image, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
+            <h2 className="text-3xl font-extrabold text-black sm:text-4xl text-center mb-12 pt-10">Our Activities</h2>
               <Card>
                 <CardContent className="flex aspect-video items-center justify-center p-0">
                   <div className="relative w-full h-full">
@@ -53,7 +54,7 @@ export function ImageCarousel() {
                       objectFit="cover"
                       className="rounded-md"
                     />
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#D8CFC4] text-white p-4 rounded-b-md">
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#D8CFC4] text-black p-4 rounded-b-md">
                       <p className="text-lg text-center">{image.caption}</p>
                     </div>
                   </div>

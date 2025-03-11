@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image"; // Import the Image component
-import { useRouter } from "next/navigation"; // Import Next.js router
+import Image from "next/image"; 
+import { useRouter } from "next/navigation"; 
+import { useState } from "react";
 
 const carouselItems = [
-  { id: "item1", title: "Item 1", imageUrl: "/research/sam6.png", link: "/vision" },
+  { id: "item1", title: "Item 1", imageUrl: "/Covers/samCover.jpg", link: "/vision" },
   { id: "item2", title: "Item 2", imageUrl: "/research/gameMel.png", link: "/vision" },
   { id: "item3", title: "Item 3", imageUrl: "/projects/BioHealth.jpg", link: "/page3" },
   { id: "item4", title: "Item 4", imageUrl: "/research/bybit.jpg", link: "/vision" },
@@ -15,18 +16,23 @@ const carouselItems = [
 const extendedItems = [...carouselItems, ...carouselItems];
 
 const ImageCarousel = () => {
-  const router = useRouter(); // Using Next.js router to navigate
+  const router = useRouter();
+  const [loadedImages, setLoadedImages] = useState({});
 
   const handleClick = (link) => {
-    router.push(link); // Navigate to the specified link
+    router.push(link);
   };
 
   const handleMouseEnter = () => {
-    document.querySelector('.carousel').style.animationPlayState = 'paused';
+    document.querySelector(".carousel").style.animationPlayState = "paused";
   };
 
   const handleMouseLeave = () => {
-    document.querySelector('.carousel').style.animationPlayState = 'running';
+    document.querySelector(".carousel").style.animationPlayState = "running";
+  };
+
+  const handleImageLoad = (id) => {
+    setLoadedImages((prev) => ({ ...prev, [id]: true }));
   };
 
   return (
@@ -36,15 +42,21 @@ const ImageCarousel = () => {
           <div key={index} className="carousel-item">
             <div
               className="image-container"
-              onClick={() => handleClick(item.link)} // Handle click event
+              onClick={() => handleClick(item.link)}
             >
+              {/* Only show the image when it's loaded */}
               <Image 
                 src={item.imageUrl} 
                 alt={item.title} 
-                className="carousel-image" 
-                width={220}  
-                height={220} 
+                fill={true} 
+                className={`carousel-image object-cover transition-opacity duration-500 ${
+                  loadedImages[item.id] ? "opacity-100" : "opacity-0"
+                }`}
+                onLoadingComplete={() => handleImageLoad(item.id)}
               />
+              <div className="image-text">
+                <p className="text">{item.title}</p>
+              </div>
             </div>
           </div>
         ))}
@@ -65,33 +77,53 @@ const ImageCarousel = () => {
         .carousel {
           display: flex;
           animation: scroll 6s linear infinite;
-          width: calc(250px * ${extendedItems.length}); /* Width based on item count */
+          width: calc(250px * ${extendedItems.length});
         }
 
         .carousel-item {
-          min-width: 250px;
-          height: 250px; /* Set consistent height for each image container */
-          margin: 0 15px; /* Space between images */
+          min-width: 220px;
+          height: 200px;
+          margin: 0 30px;
           display: flex;
           justify-content: center;
           align-items: center;
+          flex-direction: column;
         }
 
         .image-container {
-          width: 250px; /* Ensure image container has consistent size */
-          height: 250px;
-          border-radius: 40%; /* Make the container rounded */
-          overflow: hidden; /* Hide any overflow */
+          width: 220px;
+          height: 200px;
+          border-radius: 10%;
+          overflow: hidden;
           display: flex;
           justify-content: center;
           align-items: center;
-          cursor: pointer; /* Indicate that the image is clickable */
+          cursor: pointer;
+          position: relative;
         }
 
         .carousel-image {
-          object-fit: cover; /* Ensure images cover the container's area */
-          width: 100%;
-          height: 100%;
+          object-fit: cover;
+          transition: opacity 0.5s ease-in-out;
+        }
+
+        .image-text {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: rgba(0, 0, 0, 0.6);
+          color: white;
+          text-align: center;
+          padding: 5px;
+          border-bottom-left-radius: 10%;
+          border-bottom-right-radius: 10%;
+        }
+
+        .text {
+          margin: 0;
+          font-size: 14px;
+          font-weight: bold;
         }
 
         @keyframes scroll {
