@@ -5,12 +5,12 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const carouselItems = [
-  { id: "item1", title: "Item 1", imageUrl: "/Covers/samCover.jpg", link: "/vision" },
-  { id: "item2", title: "Item 2", imageUrl: "/research/gameMel.png", link: "/vision" },
-  { id: "item3", title: "Item 3", imageUrl: "/projects/BioHealth.jpg", link: "/page3" },
-  { id: "item4", title: "Item 4", imageUrl: "/research/bybit.jpg", link: "/vision" },
-  { id: "item5", title: "Item 5", imageUrl: "/research/placeholder.jpg", link: "/page5" },
-  { id: "item6", title: "Item 6", imageUrl: "/research/placeholder.jpg", link: "/page6" },
+  { id: "item1", title: "Research Paper", imageUrl: "/Covers/samCover.jpg", link: "/vision" },
+  { id: "item2", title: "Research Paper", imageUrl: "/research/gameMel.png", link: "/vision" },
+  { id: "item3", title: "Software development task", imageUrl: "/projects/BioHealth.jpg", link: "/page3" },
+  { id: "item4", title: "Research Paper", imageUrl: "/research/bybit.jpg", link: "/vision" },
+  { id: "item5", title: "Software development task", imageUrl: "/research/placeholder.jpg", link: "/page5" },
+  { id: "item6", title: "Software development task", imageUrl: "/research/placeholder.jpg", link: "/page6" },
 ];
 
 const extendedItems = [...carouselItems, ...carouselItems];
