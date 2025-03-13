@@ -102,7 +102,7 @@ export default function About() {
             </p>
             <div className="flex gap-8 mb-8">
               <a
-                href="https://discord.com/invite/yourdiscordlink"
+                href="https://x.com/africasblock?t=zfMJFY6242Fuk0DmYuTgsA&s=31"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-[#D8CFC4] text-white rounded-full hover:bg-[#5B6D9D] transition-all"
@@ -110,7 +110,7 @@ export default function About() {
                 Follow Us on X
               </a>
               <a
-                href="https://www.linkedin.com/company/yourlinkedin"
+                href="https://www.linkedin.com/company/africa-s-blockchain-club/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-[#AFAFAF] text-white rounded-full hover:bg-[#005C85] transition-all"
