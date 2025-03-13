@@ -43,17 +43,11 @@ const forms = {
 
 export default function Carousel() {
   const [activeForm, setActiveForm] = useState(null);
-  const [isFormVisible, setIsFormVisible] = useState(false);
   const [formData, setFormData] = useState({});
   const [alert, setAlert] = useState({ message: "", type: "", visible: false });
 
   const handleButtonClick = (key) => {
-    if (activeForm === key) {
-      setIsFormVisible(!isFormVisible);
-    } else {
-      setActiveForm(key);
-      setIsFormVisible(true);
-    }
+    setActiveForm(key);
     setFormData({});
   };
 
@@ -80,7 +74,6 @@ export default function Carousel() {
           type: "success",
           visible: true,
         });
-        setIsFormVisible(false);
       } else {
         setAlert({
           message:
@@ -112,7 +105,9 @@ export default function Carousel() {
             key={key}
             onClick={() => handleButtonClick(key)}
             className={`px-6 py-3 font-semibold rounded-lg transition-all ${
-              activeForm === key && isFormVisible ? "bg-gray-600" : "bg-[#D8CFC4]"
+              activeForm === key
+                ? "bg-blue-500 shadow-lg shadow-blue-500"
+                : "bg-[#D8CFC4]"
             }`}
           >
             {key === "developer"
@@ -124,23 +119,23 @@ export default function Carousel() {
         ))}
       </div>
 
-      <div className={`overflow-hidden transition-all duration-500 ${isFormVisible ? "max-h-[1000px] opacity-100 mt-6" : "max-h-0 opacity-0"}`}>
-        {isFormVisible && (
-          <div className="bg-[#EFE6DC] p-6 rounded-2xl w-[90%] max-w-[600px] mx-4 text-black text-center shadow-lg">
+      <div className="mt-6 w-full max-w-[600px] mx-auto">
+        {activeForm && (
+          <div className=" p-6 rounded-2xl text-black">
             <h1 className="text-2xl font-bold mb-4">{forms[activeForm]?.text}</h1>
             <form onSubmit={handleSubmit} className="space-y-4">
               {forms[activeForm]?.fields.map((field) =>
                 field.type === "select" ? (
-                  <select key={field.name} name={field.name} onChange={handleChange} className="w-full p-3 bg-[#D8CFC4] rounded-lg">
+                  <select key={field.name} name={field.name} onChange={handleChange} className="w-full p-3 bg-[#F1E8D6] rounded-lg">
                     <option value="" disabled selected>{field.placeholder}</option>
                     {field.options.map((option) => (
                       <option key={option} value={option}>{option}</option>
                     ))}
                   </select>
                 ) : field.type === "textarea" ? (
-                  <textarea key={field.name} name={field.name} onChange={handleChange} placeholder={field.placeholder} className="w-full p-3 bg-[#D8CFC4] rounded-lg h-32" />
+                  <textarea key={field.name} name={field.name} onChange={handleChange} placeholder={field.placeholder} className="w-full p-3 bg-[#F1E8D6] rounded-lg h-32" />
                 ) : (
-                  <input key={field.name} name={field.name} type={field.type} onChange={handleChange} placeholder={field.placeholder} className="w-full p-3 bg-[#D8CFC4] rounded-lg" />
+                  <input key={field.name} name={field.name} type={field.type} onChange={handleChange} placeholder={field.placeholder} className="w-full p-3 bg-[#F1E8D6] rounded-lg" />
                 )
               )}
               <button type="submit" className="w-full bg-blue-400 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all">Submit</button>
@@ -150,18 +145,18 @@ export default function Carousel() {
       </div>
 
       {alert.visible && (
-  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
-    <div className={`px-6 py-4 rounded-lg shadow-lg text-center w-96 opacity-100 
-      ${alert.type === "success" ? "bg-[#D8CFC4] text-black" : "bg-[#D8CFC4] text-black"}`}>
-      <p>{alert.message}</p>
-      <button
-        className="mt-3 px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200"
-        onClick={() => setAlert({ ...alert, visible: false })}
-      >
-        Close
-      </button>
-    </div>
-  </div>
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className={`px-6 py-4 rounded-lg shadow-lg shadow-blue-500 text-center w-96 opacity-100 
+            ${alert.type === "success" ? "bg-[#D8CFC4] text-black" : "bg-[#D8CFC4] text-black"}`}>
+            <p>{alert.message}</p>
+            <button
+              className="mt-3 px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-200"
+              onClick={() => setAlert({ ...alert, visible: false })}
+            >
+              Close
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

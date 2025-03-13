@@ -42,7 +42,7 @@ const Navbar = () => {
 
           {/* Right Side: Navigation Links */}
           <div className="flex items-center gap-2">
-            <Link href="/#about">
+            <Link href="/about">
               <Button
                 variant="ghost"
                 className="text-black hover:bg-transparent"
@@ -60,7 +60,7 @@ const Navbar = () => {
               </Button>
             </Link>
 
-            <Link href="/#projects">
+            <Link href="/projects">
               <Button
                 variant="ghost"
                 className="text-black hover:bg-transparent"

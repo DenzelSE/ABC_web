@@ -14,7 +14,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/#about" className="text-gray-400 hover:text-white">
+                <Link href="/about" className="text-gray-400 hover:text-white">
                   About Us
                 </Link>
               </li>
@@ -36,7 +36,7 @@ export default function Footer() {
               <a href="https://github.com/Africas-Blockchain-Club" className="text-gray-400 hover:text-white">
                 <Github />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://x.com/africasblock?t=zfMJFY6242Fuk0DmYuTgsA&s=31" className="text-gray-400 hover:text-white">
                 <Twitter />
               </a>
               <a href="https://www.linkedin.com/company/africa-s-blockchain-club/" className="text-gray-400 hover:text-white">
@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-700 pt-8 text-center">
+        <div className="mt-8 bordhttps://stablecoin.gitbook.io/africas-blockchain-club-abc/defi/decentralised-exchange-dex/create-a-dapper-t border-gray-700 pt-8 text-center">
           <p className="text-gray-400">&copy; 2023 BlockChain Builders. All rights reserved.</p>
         </div>
       </div>

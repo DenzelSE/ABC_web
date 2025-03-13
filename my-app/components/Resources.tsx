@@ -7,13 +7,13 @@ const resources = [
     title: "Web3 Fundamentals",
     description: "A comprehensive guide to the basics of Web3 development.",
     icon: BookOpen,
-    link: "#",
+    link: "https://stablecoin.gitbook.io/africas-blockchain-club-abc",
   },
   {
     title: "Smart Contract Development",
     description: "Learn how to write and deploy smart contracts on various blockchains.",
     icon: Code,
-    link: "#",
+    link: "https://stablecoin.gitbook.io/africas-blockchain-club-abc/defi/decentralised-exchange-dex/create-a-dapp",
   },
   {
     title: "DApp Architecture",

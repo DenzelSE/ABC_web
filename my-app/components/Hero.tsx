@@ -1,3 +1,4 @@
+import Link from "next/link"; // Importing Link from Next.js
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import ABCcarousel from "@/components/ABCwork";
@@ -15,19 +16,24 @@ export default function Hero() {
             </div>
 
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#2E2E2E] to-[#4A4A4A]">
-              Building Africa's
+              Building Africa&apos;s
               <span className="block">Blockchain Future</span>
             </h1>
             <p className="mt-4 text-xl max-w-3xl text-gray-600">
               Join our community of passionate developers and innovators shaping the decentralized web across Africa.
             </p>
             <div className="mt-6 flex gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-[#4A4A4A] hover:bg-[#D8CFC4] text-white">
-                Get Started
-              </Button>
-              <Button size="lg" variant="outline" className="bg-[#4A4A4A] hover:bg-[#D8CFC4] text-white">
-                Learn More
-              </Button>
+              {/* Wrapping buttons with Link components */}
+              <Link href="/#events">
+                <Button size="lg" className="bg-[#4A4A4A] hover:bg-[#D8CFC4] text-white">
+                  Get Started
+                </Button>
+              </Link>
+              <Link href="/#events">
+                <Button size="lg" variant="outline" className="bg-[#4A4A4A] hover:bg-[#D8CFC4] text-white">
+                  Learn More
+                </Button>
+              </Link>
             </div>
           </div>
 
